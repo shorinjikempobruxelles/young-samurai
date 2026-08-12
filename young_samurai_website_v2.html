@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Young Samurai — Shorinji Kempo Bruxelles</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1F33;--lnavy:#162840;--dnavy:#080F1A;
+  --blue:#1A5276;--steel:#2E86C1;
+  --gold:#C9A84C;--lgold:#F0D080;
+  --white:#FFFFFF;--off:#F4F6F8;
+  --grey:#6B7A8D;--lgrey:#EEF1F5;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--navy);line-height:1.6}
+
+/* ── NAV ─────────────────────────────────────────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:var(--navy);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 5%;height:58px;
+  border-bottom:3px solid var(--gold);
+}
+.nav-logo{font-family:'Fredoka One',cursive;font-size:20px;color:var(--white);letter-spacing:1px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:7px 16px}
+
+/* ── HERO ────────────────────────────────────────────────────────────────── */
+.hero{
+  min-height:88vh;background:var(--navy);
+  position:relative;display:flex;align-items:center;overflow:hidden;
+}
+.hero-bg-kanji{
+  position:absolute;right:-2%;top:50%;transform:translateY(-50%);
+  font-size:clamp(260px,38vw,500px);color:#162840;
+  font-family:serif;line-height:1;pointer-events:none;user-select:none;
+}
+.hero-gold-bar{position:absolute;top:0;left:0;right:0;height:6px;background:var(--gold)}
+.hero-content{position:relative;z-index:2;padding:70px 5% 70px 6%}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:3px;color:var(--gold);
+  text-transform:uppercase;font-weight:700;margin-bottom:18px;
+}
+.hero-title{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(56px,9vw,104px);
+  line-height:.95;letter-spacing:1px;margin-bottom:20px;
+}
+.hero-title .l1{color:var(--white);display:block}
+.hero-title .l2{color:var(--gold);display:block}
+.hero-tagline{
+  font-size:clamp(17px,2.5vw,22px);color:rgba(255,255,255,.85);
+  font-style:italic;margin-bottom:10px;
+}
+.hero-etym{
+  font-size:13px;color:rgba(255,255,255,.45);margin-bottom:36px;
+  border-left:2px solid var(--gold);padding-left:14px;
+}
+.hero-init{
+  font-size:12px;color:rgba(255,255,255,.5);margin-bottom:28px;
+  letter-spacing:.5px;
+}
+.hero-init strong{color:var(--gold);font-size:14px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-p{
+  background:var(--gold);color:var(--navy);padding:13px 28px;
+  font-weight:900;font-size:13px;letter-spacing:1px;text-transform:uppercase;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;display:inline-block;
+  font-family:'Nunito',sans-serif;
+}
+.btn-p:hover{background:var(--lgold);transform:translateY(-1px)}
+.btn-s{
+  background:transparent;color:var(--white);padding:13px 28px;
+  font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;
+  text-decoration:none;border:1px solid rgba(255,255,255,.3);
+  transition:border-color .2s;display:inline-block;
+  font-family:'Nunito',sans-serif;
+}
+.btn-s:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{
+  position:absolute;bottom:32px;left:6%;
+  display:flex;gap:28px;
+}
+.stat .num{font-size:30px;font-weight:900;color:var(--gold);line-height:1}
+.stat .lbl{font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:1px}
+
+/* ── GOLD BAND ───────────────────────────────────────────────────────────── */
+.gold-band{background:var(--gold);padding:18px 5%;text-align:center}
+.gold-band p{font-size:14px;font-weight:700;color:var(--navy);letter-spacing:.5px}
+
+/* ── SECTIONS ────────────────────────────────────────────────────────────── */
+section{padding:72px 5%}
+.sec-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--steel);font-weight:700;margin-bottom:6px}
+.sec-title{font-size:clamp(26px,4vw,40px);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:16px}
+.sec-title span{color:var(--gold)}
+.sec-body{font-size:16px;color:var(--grey);max-width:600px;line-height:1.7}
+
+/* ── VALEURS ─────────────────────────────────────────────────────────────── */
+#valeurs{background:var(--navy)}
+#valeurs .sec-title{color:var(--white)}
+#valeurs .sec-body{color:rgba(255,255,255,.6)}
+.val-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;margin-top:44px}
+.val-card{background:var(--lnavy);padding:28px 22px;border-top:3px solid var(--gold);transition:background .2s}
+.val-card:hover{background:var(--blue)}
+.val-num{font-size:10px;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:10px}
+.val-name{font-size:15px;font-weight:900;color:var(--white);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.val-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* ── PROGRAMME ───────────────────────────────────────────────────────────── */
+#programme{background:var(--off)}
+.groups-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:40px 0}
+.group-card{background:var(--white);padding:28px;border-left:4px solid var(--steel);box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.group-card.gold{border-left-color:var(--gold)}
+.g-tag{font-size:9px;letter-spacing:3px;font-weight:700;color:var(--steel);text-transform:uppercase;margin-bottom:4px}
+.g-name{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:3px}
+.g-sub{font-family:'Fredoka One',cursive;font-size:15px;color:var(--gold);margin-bottom:10px}
+.g-ages{font-size:32px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:12px}
+.g-desc{font-size:14px;color:var(--grey);line-height:1.6}
+
+/* CALENDAR */
+.cal-event{
+  display:grid;grid-template-columns:72px 1fr auto;
+  gap:0 18px;align-items:center;padding:14px 0;
+  border-bottom:1px solid #E5E8EC;
+}
+.cal-event:first-child{border-top:1px solid #E5E8EC}
+.cal-month{font-size:11px;font-weight:900;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+.cal-title{font-size:15px;font-weight:700;color:var(--navy)}
+.cal-desc{font-size:12px;color:var(--grey);margin-top:2px}
+.badge{font-size:9px;font-weight:700;padding:3px 9px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+.b-blue{background:var(--blue);color:white}
+.b-gold{background:var(--gold);color:var(--navy)}
+.b-navy{background:var(--navy);color:white}
+.b-green{background:#1A6B3A;color:white}
+
+/* ── SERVICE ─────────────────────────────────────────────────────────────── */
+#service{background:var(--navy);position:relative;overflow:hidden}
+#service::before{
+  content:'侍';position:absolute;font-size:400px;
+  color:rgba(255,255,255,.03);right:-40px;top:50%;transform:translateY(-50%);
+  font-family:serif;pointer-events:none;
+}
+#service .sec-title{color:var(--white)}
+#service .sec-body{color:rgba(255,255,255,.6)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:44px}
+.svc-card{background:var(--lnavy);padding:26px;border-bottom:3px solid var(--steel)}
+.svc-icon{font-size:26px;margin-bottom:10px}
+.svc-name{font-size:14px;font-weight:900;color:var(--white);margin-bottom:6px}
+.svc-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* ── TARIFS ──────────────────────────────────────────────────────────────── */
+#tarifs{background:var(--off)}
+.tarifs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:44px}
+.tarif-card{background:var(--white);padding:28px;box-shadow:0 2px 14px rgba(0,0,0,.06);position:relative;border-top:4px solid var(--steel)}
+.tarif-card.featured{border-top-color:var(--gold);box-shadow:0 4px 28px rgba(201,168,76,.15)}
+.featured-badge{position:absolute;top:-1px;right:18px;background:var(--gold);color:var(--navy);font-size:9px;font-weight:900;padding:3px 9px;letter-spacing:1px;text-transform:uppercase}
+.t-name{font-size:12px;font-weight:700;color:var(--steel);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.t-price{font-size:40px;font-weight:900;color:var(--navy);line-height:1;margin-bottom:14px}
+.t-price sup{font-size:17px;vertical-align:super}
+.t-list{list-style:none;margin-bottom:22px}
+.t-list li{font-size:13px;color:var(--grey);padding:4px 0;border-bottom:1px solid #F0F0F0;display:flex;align-items:center;gap:7px}
+.t-list li::before{content:'✓';color:var(--steel);font-weight:900;font-size:11px;flex-shrink:0}
+.solidarity{background:var(--lnavy);color:rgba(255,255,255,.7);padding:14px 18px;font-size:13px;margin-top:28px;border-left:3px solid var(--gold);font-style:italic}
+
+/* ── STAGE PROMO ──────────────────────────────────────────────────────────── */
+.stage-promo{
+  background:linear-gradient(135deg,var(--blue),var(--navy));
+  border:1px solid var(--gold);padding:36px;margin-top:44px;
+  display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;
+}
+.sp-label{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.sp-title{font-size:24px;font-weight:900;color:var(--white);margin-bottom:6px}
+.sp-detail{font-size:14px;color:rgba(255,255,255,.6)}
+.sp-open{display:inline-block;background:#1A6B3A;color:white;font-size:10px;font-weight:700;padding:3px 11px;margin-top:12px;letter-spacing:1px;text-transform:uppercase}
+.sp-price-block{text-align:center;min-width:130px}
+.sp-price{font-size:46px;font-weight:900;color:var(--gold);line-height:1}
+.sp-price-lbl{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;text-transform:uppercase;letter-spacing:1px}
+
+/* ── CONTACT ─────────────────────────────────────────────────────────────── */
+#contact{background:var(--navy);text-align:center}
+#contact .sec-title{color:var(--white)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin:44px 0}
+.ci .ci-icon{font-size:26px;margin-bottom:8px}
+.ci .ci-label{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:5px}
+.ci .ci-value{font-size:15px;color:var(--white);font-weight:600}
+.ci a{color:var(--white);text-decoration:none}
+.ci a:hover{color:var(--gold)}
+
+/* ── FOOTER ──────────────────────────────────────────────────────────────── */
+footer{
+  background:var(--dnavy);padding:22px 5%;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid var(--lnavy);flex-wrap:wrap;gap:10px;
+}
+.f-logo{font-family:'Fredoka One',cursive;font-size:14px;color:var(--white)}
+.f-logo span{color:var(--gold)}
+.f-text{font-size:11px;color:rgba(255,255,255,.3)}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media(max-width:680px){
+  .groups-row{grid-template-columns:1fr}
+  .cal-event{grid-template-columns:58px 1fr}
+  .badge{display:none}
+  .stage-promo{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hero-stats{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">YOUNG <span>SAMURAI</span></div>
+  <ul class="nav-links">
+    <li><a href="#programme">Programme</a></li>
+    <li><a href="#valeurs">Valeurs</a></li>
+    <li><a href="#service">Service</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#contact" class="nav-cta">S'inscrire</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-kanji">侍</div>
+  <div class="hero-gold-bar"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Auderghem &amp; Watermael-Boitsfort · Bruxelles · Saison 2026–27</div>
+    <h1 class="hero-title">
+      <span class="l1">YOUNG</span>
+      <span class="l2">SAMURAI</span>
+    </h1>
+    <p class="hero-tagline">S'entraîner pour servir.</p>
+    <p class="hero-etym">
+      <em>Samouraï</em> vient du japonais <em>saburau</em> — servir.<br>
+      La discipline martiale au service de la communauté.
+    </p>
+    <p class="hero-init">Une initiative de <strong>Shorinji Kempo Bruxelles</strong></p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-p">S'inscrire — Saison 2026–27</a>
+      <a href="#programme" class="btn-s">Découvrir le programme</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num">6–15</div><div class="lbl">Ans</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">Événements</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">Communes</div></div>
+  </div>
+</section>
+
+<div class="gold-band">
+  <p>Arts martiaux · Service communautaire · Formation au leadership · Auderghem &amp; Watermael-Boitsfort</p>
+</div>
+
+<!-- VALEURS -->
+<section id="valeurs">
+  <div class="sec-label">Notre identité</div>
+  <h2 class="sec-title">Des valeurs qui <span>guident chaque geste</span></h2>
+  <p class="sec-body">Chez Young Samurai, la technique martiale n'est pas une fin en soi. Elle est au service d'un développement humain guidé par cinq valeurs vécues — pas affichées.</p>
+  <div class="val-grid">
+    <div class="val-card"><div class="val-num">01</div><div class="val-name">Discipline</div><div class="val-desc">S'engager avec constance dans l'entraînement, le service et la vie collective.</div></div>
+    <div class="val-card"><div class="val-num">02</div><div class="val-name">Service</div><div class="val-desc">Donner de son temps parce que c'est juste, pas pour être applaudi.</div></div>
+    <div class="val-card"><div class="val-num">03</div><div class="val-name">Respect</div><div class="val-desc">Traiter chaque personne avec bienveillance — pratiquant, bénéficiaire, partenaire.</div></div>
+    <div class="val-card"><div class="val-num">04</div><div class="val-name">Solidarité</div><div class="val-desc">Soutenir son groupe et tendre la main à ceux qui en ont besoin.</div></div>
+    <div class="val-card"><div class="val-num">05</div><div class="val-name">Transmission</div><div class="val-desc">Apprendre, grandir, et transmettre — à chaque entraînement, à chaque camp.</div></div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme">
+  <div class="sec-label">Saison 2026–27</div>
+  <h2 class="sec-title">Un programme structuré <span>qui forme des leaders</span></h2>
+  <p class="sec-body">Deux groupes qui travaillent ensemble. Les grands encadrent les petits — c'est leur responsabilité et c'est ce qui les forme vraiment. Le service à la communauté est une condition d'avancement de grade.</p>
+
+  <div class="groups-row">
+    <div class="group-card">
+      <div class="g-tag">Groupe Fondation</div>
+      <div class="g-name">Little Samurai</div>
+      <div class="g-ages">6–9 ans</div>
+      <div class="g-desc">Apprendre, découvrir, être pris en charge par les Grands. Participe à tous les événements. Développer les bases de la discipline et de la confiance.</div>
+    </div>
+    <div class="group-card gold">
+      <div class="g-tag">Groupe Transmission</div>
+      <div class="g-name">Young Samurai</div>
+      <div class="g-ages">10–15 ans</div>
+      <div class="g-desc">Chaque Grand est responsable de 2–3 Petits pendant les événements. Cette responsabilité est une condition d'avancement de grade. Les 13–15 ans deviennent assistants-animateurs.</div>
+    </div>
+  </div>
+
+  <div class="sec-label" style="margin-top:8px">Calendrier de la saison</div>
+  <div style="margin-top:8px">
+    <div class="cal-event">
+      <div class="cal-month">NOV.</div>
+      <div><div class="cal-title">Weekend 1 — journée</div><div class="cal-desc">Entraînement · Repas partagé · Mission de service locale</div></div>
+      <div class="badge b-blue">Journée</div>
+    </div>
+    <div class="cal-event">
+      <div class="cal-month">JANV.</div>
+      <div><div class="cal-title">Fête de la nouvelle année</div><div class="cal-desc">Démonstration · Partage · Familles invitées</div></div>
+      <div class="badge b-navy">Soirée</div>
+    </div>
+    <div class="cal-event">
+      <div class="cal-month">FÉV.</div>
+      <div><div class="cal-title">Stage Carnaval — 5 jours ★</div><div class="cal-desc">Lun–Ven 9h–17h · Entraînement intensif · Mission de service quotidienne</div></div>
+      <div class="badge b-green">Ouvert non-membres</div>
+    </div>
+    <div class="cal-event">
+      <div class="cal-month">AVRIL</div>
+      <div><div class="cal-title">Weekend 2 — leadership</div><div class="cal-desc">Les Grands conçoivent et animent le programme du matin</div></div>
+      <div class="badge b-blue">Journée</div>
+    </div>
+    <div class="cal-event">
+      <div class="cal-month">JUIL.</div>
+      <div><div class="cal-title">Weekend en gîte — 2 nuits</div><div class="cal-desc">Namurois · Pension complète · Cérémonie de graduation</div></div>
+      <div class="badge b-gold">Résidentiel</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service">
+  <div class="sec-label">Notre engagement</div>
+  <h2 class="sec-title">Servir, <span>c'est avancer</span></h2>
+  <p class="sec-body">Le service communautaire n'est pas une activité parmi d'autres. C'est une condition d'avancement de grade. Nos jeunes servent des personnes réelles, dans leur quartier, tout au long de la saison.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-icon">🤝</div><div class="svc-name">Fedasil Auderghem</div><div class="svc-desc">Animations sportives avec des mineurs réfugiés non accompagnés. Activité physique sans barrière de langue.</div></div>
+    <div class="svc-card"><div class="svc-icon">🛍️</div><div class="svc-name">Croix-Rouge Auderghem</div><div class="svc-desc">Soutien à l'épicerie sociale — manutention, accueil, collectes de vêtements et couvertures.</div></div>
+    <div class="svc-card"><div class="svc-icon">👴</div><div class="svc-name">Maisons de repos</div><div class="svc-desc">Visites et animations intergénérationnelles. Démonstrations, jeux, présence humaine.</div></div>
+    <div class="svc-card"><div class="svc-icon">🌿</div><div class="svc-name">Nature &amp; Environnement</div><div class="svc-desc">Chantiers Natagora en Ardennes lors du camp. Gestion de réserves naturelles, sentiers.</div></div>
+  </div>
+
+  <div class="stage-promo">
+    <div>
+      <div class="sp-label">Stage Carnaval 2027 — Ouvert à tous</div>
+      <div class="sp-title">5 jours pour aller plus loin</div>
+      <div class="sp-detail">Lundi–Vendredi · 9h00–17h00<br>Auderghem / Watermael-Boitsfort<br>Entraînement intensif · Mission de service · 6 à 15 ans</div>
+      <div class="sp-open">Ouvert aux non-membres — places limitées</div>
+    </div>
+    <div class="sp-price-block">
+      <div class="sp-price">€160</div>
+      <div class="sp-price-lbl">Non-membres<br>inclus dans forfait membres</div>
+      <a href="#contact" class="btn-p" style="margin-top:14px;display:inline-block;font-size:11px">Réserver</a>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+  <div class="sec-label">Investissement</div>
+  <h2 class="sec-title">Tarifs saison <span>2026–27</span></h2>
+  <p class="sec-body">Un acompte est demandé à l'inscription. Des tarifs fratrie et solidarité sont disponibles — aucun enfant ne doit être exclu pour des raisons financières.</p>
+
+  <div class="tarifs-grid">
+    <div class="tarif-card">
+      <div class="t-name">Programme saison sans stage</div>
+      <div class="t-price"><sup>€</sup>250</div>
+      <ul class="t-list">
+        <li>Assurance RC &amp; accidents</li>
+        <li>Livret de saison + patchs</li>
+        <li>Weekend 1 (nov.) journée</li>
+        <li>Fête de la nouvelle année (janv.)</li>
+        <li>Weekend 2 (avril) leadership</li>
+        <li>Gîte résidentiel (juil.) 2 nuits</li>
+        <li>Cérémonies ouverture &amp; clôture</li>
+      </ul>
+      <a href="#contact" class="btn-s" style="font-size:12px;border-color:var(--steel);color:var(--steel)">S'inscrire</a>
+    </div>
+
+    <div class="tarif-card featured">
+      <div class="featured-badge">Recommandé</div>
+      <div class="t-name">Programme complet + Stage</div>
+      <div class="t-price"><sup>€</sup>370</div>
+      <ul class="t-list">
+        <li>Tout du programme saison</li>
+        <li>Stage Carnaval 5 jours inclus</li>
+        <li>Badge de camp</li>
+        <li>Réduction fratrie disponible</li>
+      </ul>
+      <a href="#contact" class="btn-p" style="font-size:12px">S'inscrire</a>
+    </div>
+
+    <div class="tarif-card">
+      <div class="t-name">Stage Carnaval seul</div>
+      <div class="t-price"><sup>€</sup>160</div>
+      <ul class="t-list">
+        <li>5 jours 9h–17h</li>
+        <li>Entraînement martial intensif</li>
+        <li>Mission de service chaque jour</li>
+        <li>Badge de stage</li>
+        <li>Ouvert aux non-membres</li>
+        <li>Places limitées</li>
+      </ul>
+      <a href="#contact" class="btn-s" style="font-size:12px;border-color:#1A6B3A;color:#1A6B3A">Réserver</a>
+    </div>
+  </div>
+
+  <div class="solidarity">Des tarifs solidaires sont disponibles pour les familles membres du club qui en ont besoin. Contactez-nous discrètement.</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-label">Nous rejoindre</div>
+  <h2 class="sec-title" style="color:white">Prêt·e à commencer ?</h2>
+  <div class="contact-grid">
+    <div class="ci"><div class="ci-icon">✉️</div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:shorinjikempobruxelles@gmail.com">shorinjikempobruxelles@gmail.com</a></div></div>
+    <div class="ci"><div class="ci-icon">🌐</div><div class="ci-label">Site web</div><div class="ci-value"><a href="https://www.shorinjikempo.be" target="_blank">www.shorinjikempo.be</a></div></div>
+    <div class="ci"><div class="ci-icon">📞</div><div class="ci-label">Téléphone</div><div class="ci-value"><a href="tel:+32468009683">+32 468 00 96 83</a></div></div>
+    <div class="ci"><div class="ci-icon">📸</div><div class="ci-label">Instagram</div><div class="ci-value"><a href="https://instagram.com/shorinjikempobxl" target="_blank">@shorinjikempobxl</a></div></div>
+  </div>
+  <a href="mailto:shorinjikempobruxelles@gmail.com" class="btn-p" style="font-size:14px;padding:15px 38px">Contacter Young Samurai</a>
+</section>
+
+<footer>
+  <div class="f-logo">YOUNG <span>SAMURAI</span></div>
+  <div class="f-text">Une initiative de Shorinji Kempo Bruxelles · Auderghem &amp; Watermael-Boitsfort · Saison 2026–27</div>
+  <div class="f-text">「侍」 Saburau — Servir</div>
+</footer>
+
+</body>
+</html>
