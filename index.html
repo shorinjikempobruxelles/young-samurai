@@ -57,7 +57,7 @@ nav{
 .hero-title .l2{color:var(--gold);display:block}
 .hero-tagline{
   font-size:clamp(17px,2.5vw,22px);color:rgba(255,255,255,.85);
-  font-style:italic;margin-bottom:10px;
+  font-weight:600;margin-bottom:10px;
 }
 .hero-etym{
   font-size:13px;color:rgba(255,255,255,.45);margin-bottom:36px;
@@ -104,15 +104,13 @@ section{padding:72px 5%}
 .sec-body{font-size:16px;color:var(--grey);max-width:600px;line-height:1.7}
 
 /* ── VALEURS ─────────────────────────────────────────────────────────────── */
-#valeurs{background:var(--navy)}
-#valeurs .sec-title{color:var(--white)}
-#valeurs .sec-body{color:rgba(255,255,255,.6)}
-.val-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;margin-top:44px}
-.val-card{background:var(--lnavy);padding:28px 22px;border-top:3px solid var(--gold);transition:background .2s}
-.val-card:hover{background:var(--blue)}
+#valeurs{background:var(--off)}
+.val-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;margin-top:44px;background:#E5E8EC}
+.val-card{background:var(--white);padding:28px 22px;border-top:3px solid var(--gold);transition:background .2s}
+.val-card:hover{background:#FBF6E9}
 .val-num{font-size:10px;color:var(--gold);font-weight:700;letter-spacing:2px;margin-bottom:10px}
-.val-name{font-size:15px;font-weight:900;color:var(--white);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.val-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}
+.val-name{font-size:15px;font-weight:900;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.val-desc{font-size:13px;color:var(--grey);line-height:1.6}
 
 /* ── PROGRAMME ───────────────────────────────────────────────────────────── */
 #programme{background:var(--off)}
@@ -142,19 +140,17 @@ section{padding:72px 5%}
 .b-green{background:#1A6B3A;color:white}
 
 /* ── SERVICE ─────────────────────────────────────────────────────────────── */
-#service{background:var(--navy);position:relative;overflow:hidden}
+#service{background:var(--white);position:relative;overflow:hidden}
 #service::before{
   content:'侍';position:absolute;font-size:400px;
-  color:rgba(255,255,255,.03);right:-40px;top:50%;transform:translateY(-50%);
+  color:rgba(13,31,51,.035);right:-40px;top:50%;transform:translateY(-50%);
   font-family:serif;pointer-events:none;
 }
-#service .sec-title{color:var(--white)}
-#service .sec-body{color:rgba(255,255,255,.6)}
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:44px}
-.svc-card{background:var(--lnavy);padding:26px;border-bottom:3px solid var(--steel)}
+.svc-card{background:var(--off);padding:26px;border-bottom:3px solid var(--steel)}
 .svc-icon{font-size:26px;margin-bottom:10px}
-.svc-name{font-size:14px;font-weight:900;color:var(--white);margin-bottom:6px}
-.svc-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}
+.svc-name{font-size:14px;font-weight:900;color:var(--navy);margin-bottom:6px}
+.svc-desc{font-size:13px;color:var(--grey);line-height:1.6}
 
 /* ── TARIFS ──────────────────────────────────────────────────────────────── */
 #tarifs{background:var(--off)}
@@ -185,13 +181,12 @@ section{padding:72px 5%}
 .sp-price-lbl{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;text-transform:uppercase;letter-spacing:1px}
 
 /* ── CONTACT ─────────────────────────────────────────────────────────────── */
-#contact{background:var(--navy);text-align:center}
-#contact .sec-title{color:var(--white)}
+#contact{background:var(--off);text-align:center}
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin:44px 0}
 .ci .ci-icon{font-size:26px;margin-bottom:8px}
-.ci .ci-label{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:5px}
-.ci .ci-value{font-size:15px;color:var(--white);font-weight:600}
-.ci a{color:var(--white);text-decoration:none}
+.ci .ci-label{font-size:10px;letter-spacing:2px;color:var(--steel);font-weight:700;text-transform:uppercase;margin-bottom:5px}
+.ci .ci-value{font-size:15px;color:var(--navy);font-weight:600}
+.ci a{color:var(--navy);text-decoration:none}
 .ci a:hover{color:var(--gold)}
 
 /* ── FOOTER ──────────────────────────────────────────────────────────────── */
@@ -308,8 +303,8 @@ footer{
   <div style="margin-top:8px">
     <div class="cal-event">
       <div class="cal-month">NOV.</div>
-      <div><div class="cal-title">Weekend 1 — journée</div><div class="cal-desc">1 journée · Entraînement · Repas partagé · Mission de service locale</div></div>
-      <div class="badge b-blue">Journée</div>
+      <div><div class="cal-title">Weekend 1 — entraînement &amp; service</div><div class="cal-desc">Samedi · 1 journée · Mission de service locale</div></div>
+      <div class="badge b-blue">1 jour</div>
     </div>
     <div class="cal-event">
       <div class="cal-month">JANV.</div>
@@ -323,12 +318,12 @@ footer{
     </div>
     <div class="cal-event">
       <div class="cal-month">AVRIL</div>
-      <div><div class="cal-title">Weekend 2 — leadership</div><div class="cal-desc">2 journées · Les Grands conçoivent et animent le programme du matin</div></div>
-      <div class="badge b-blue">Journée</div>
+      <div><div class="cal-title">Weekend 2 — leadership</div><div class="cal-desc">Samedi-dimanche (date à confirmer) · 2 journées · Les Grands conçoivent et animent le programme du matin</div></div>
+      <div class="badge b-blue">2 jours</div>
     </div>
     <div class="cal-event">
       <div class="cal-month">JUIL.</div>
-      <div><div class="cal-title">Weekend en gîte — rites de passage — 2 nuits</div><div class="cal-desc">Namurois · Pension complète · Cérémonie de graduation</div></div>
+      <div><div class="cal-title">3 jours en gîte — rites de passage</div><div class="cal-desc">2 nuitées · Namurois · Pension complète · Cérémonie de graduation</div></div>
       <div class="badge b-gold">Résidentiel</div>
     </div>
   </div>
@@ -403,7 +398,7 @@ footer{
         <li>Weekend 1 — journée</li>
         <li>Fête de la nouvelle année</li>
         <li>Weekend 2 — leadership</li>
-        <li>Gîte résidentiel — 2 nuits</li>
+        <li>Gîte résidentiel — 3 jours / 2 nuitées</li>
         <li>Cérémonies ouverture &amp; clôture</li>
       </ul>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdW1O7_NQx2YnAdgikRUKOh8u-57llWNWJJYaS8vBN1GPlSgw/viewform?usp=header" target="_blank" class="btn-s" style="font-size:12px;border-color:var(--steel);color:var(--steel)">S'inscrire</a>
@@ -445,7 +440,7 @@ footer{
 <!-- CONTACT -->
 <section id="contact">
   <div class="sec-label">Nous rejoindre</div>
-  <h2 class="sec-title" style="color:white">Prêt·e à commencer ?</h2>
+  <h2 class="sec-title">Prêt·e à commencer ?</h2>
   <div class="contact-grid">
     <div class="ci"><div class="ci-icon">✉️</div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:shorinjikempobruxelles@gmail.com">shorinjikempobruxelles@gmail.com</a></div></div>
     <div class="ci"><div class="ci-icon">🌐</div><div class="ci-label">Site web</div><div class="ci-value"><a href="https://www.shorinjikempo.be" target="_blank">www.shorinjikempo.be</a></div></div>
