@@ -31,6 +31,7 @@ nav{
 .nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:700;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
 .nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:7px 16px}
+.nav-lang{color:var(--gold);font-weight:900;font-size:12px;text-decoration:none;border:1px solid var(--gold);padding:4px 10px;letter-spacing:1px;flex-shrink:0}
 
 /* ── HERO ────────────────────────────────────────────────────────────────── */
 .hero{
@@ -214,14 +215,16 @@ footer{
 
 <nav>
   <div class="nav-logo">YOUNG <span>SAMURAI</span></div>
-  <ul class="nav-links">
-    <li><a href="#programme">Programme</a></li>
-    <li><a href="#valeurs">Valeurs</a></li>
-    <li><a href="#service">Service</a></li>
-    <li><a href="#tarifs">Tarifs</a></li>
-    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdW1O7_NQx2YnAdgikRUKOh8u-57llWNWJJYaS8vBN1GPlSgw/viewform?usp=header" target="_blank" class="nav-cta">S'inscrire</a></li>
-    <li><a href="en/" style="color:var(--gold);font-weight:900;border:1px solid var(--gold);padding:4px 10px;letter-spacing:1px">EN</a></li>
-  </ul>
+  <div style="display:flex;align-items:center;gap:24px">
+    <ul class="nav-links">
+      <li><a href="#programme">Programme</a></li>
+      <li><a href="#valeurs">Valeurs</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdW1O7_NQx2YnAdgikRUKOh8u-57llWNWJJYaS8vBN1GPlSgw/viewform?usp=header" target="_blank" class="nav-cta">S'inscrire</a></li>
+    </ul>
+    <a href="en/" class="nav-lang">EN</a>
+  </div>
 </nav>
 
 <!-- HERO -->
